@@ -1,4 +1,3 @@
-
 import cv2
 import mediapipe as mp
 import csv
@@ -48,4 +47,5 @@ with open(file_path, "w", newline="") as f:
 
 cap.release()
 cv2.destroyAllWindows()
+
 print(f"Data collection finished for {gesture_name}. File saved as {file_path}")
