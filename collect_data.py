@@ -32,7 +32,7 @@ with open(file_path, "w", newline="") as f:
         cv2.imshow("Collecting Data", frame)
 
         key = cv2.waitKey(1)
-        if key & 0xFF == ord('s'):
+        if key & 0xFF == ord('s'):  #Press s to start saving data
             if results.multi_hand_landmarks:
                 for hand_landmarks in results.multi_hand_landmarks:
                     data = []
@@ -42,10 +42,11 @@ with open(file_path, "w", newline="") as f:
                     count += 1
                     print(f"Saved frame {count}")
 
-        elif key & 0xFF == ord('q'):
+        elif key & 0xFF == ord('q'):  #Press q to stop saving data
             break
 
 cap.release()
 cv2.destroyAllWindows()
 
 print(f"Data collection finished for {gesture_name}. File saved as {file_path}")
+
